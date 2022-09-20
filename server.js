@@ -23,6 +23,21 @@ server.on('request', (request, response)=>{
         case '/js/script.js':
             sendFile('text/plain');
             break;
+        case '/save':
+            let data = "";
+            request.on("data", chunk => {
+                data += chunk;
+            });
+            request.on("end", () => {
+                //сделать криптографию
+                let text = JSON.parse(data).text;
+                console.log(text);
+                response.writeHead(200, {'Content-Type': 'application/json'});
+                let link = '';
+                response.end(JSON.stringify({link: link}));
+            });
+            
+            break;
         default:
             response.writeHead(404, {'Content-Type': 'text/plain'});
             response.end('404 File Not Found');

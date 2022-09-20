@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,11 @@
     <title>Тестовое задание "Секрет"</title>
 </head>
 <body>
-    <textarea id="txtAr" cols="30" rows="10"></textarea>
+    <div class="wrapper" id="app">
+        <h2 class="secret__header">Введите текст для шифрования</h2>
+        <textarea id="txtAr" cols="30" rows="10" class="secret__text" v-model="text" placeholder="Текст"></textarea>
+        <input type="button" value="Создать ссылку" @click="sendData">
+    </div>
 </body>
     <script src="js/script.js"></script>
 </html>

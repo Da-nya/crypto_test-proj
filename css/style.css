@@ -1,0 +1,14 @@
+.wrapper{
+    max-width: 1000px;
+    width: fit-content;
+    margin: 0 auto;
+}
+.secret__header{
+    width: fit-content;
+    text-align: center;
+}
+.secret__text{
+    display: block;
+    margin: 0 auto;
+    resize: none;
+}
