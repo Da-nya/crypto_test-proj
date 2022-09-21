@@ -3,7 +3,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            text: ''
+            text: '',
+            result: null
         }
     },
     methods:{
@@ -13,8 +14,8 @@ createApp({
                     return answer.json();
                 }
             })
-            .then( result => {
-                console.log(result.link);
+            .then( res => {
+                this.result = res
             })
         }
     }

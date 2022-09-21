@@ -6,9 +6,24 @@
 .secret__header{
     width: fit-content;
     text-align: center;
+    margin-right: auto;
+    margin-left: auto;
 }
 .secret__text{
     display: block;
     margin: 0 auto;
     resize: none;
+}
+
+.btn__wrapper{
+    width: fit-content;
+    margin: 10px auto;
+}
+.btn{
+    width: fit-content;
+    cursor: pointer;
+}
+
+.error{
+    color: red;
 }

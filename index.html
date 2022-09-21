@@ -12,7 +12,13 @@
     <div class="wrapper" id="app">
         <h2 class="secret__header">Введите текст для шифрования</h2>
         <textarea id="txtAr" cols="30" rows="10" class="secret__text" v-model="text" placeholder="Текст"></textarea>
-        <input type="button" value="Создать ссылку" @click="sendData">
+        <div class="btn__wrapper">
+            <input class="btn" type="button" value="Создать ссылку" @click="sendData">
+        </div>
+        <div v-if="result">
+            <p v-if="result.result == 'ok'">Контент доступент по адресу <a target="_blank" v-bind:href="result.link">{{result.link}}</a></p>
+            <p v-else class="error"> {{result.message}} </p>
+        </div>
     </div>
 </body>
     <script src="js/script.js"></script>

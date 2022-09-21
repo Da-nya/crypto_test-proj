@@ -6,6 +6,8 @@ const fs = require('fs');
 const {Client} = require('pg');
 const client = new Client(db_config.pg_settings);
 client.connect();
+
+// создается нужная таблица, если она отсутствует
 client.query('CREATE TABLE IF NOT EXISTS secret_data(id VARCHAR UNIQUE, secret_text VARCHAR)', (err, res)=>{
     if (!err){
         console.log('Настройка БД успешна');
